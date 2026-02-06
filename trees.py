@@ -4,11 +4,16 @@ class Node:
         self.Left=Left
         self.Right=Right
 def printer(k):
-    if(k==None):
+    if k==None:
         return
     printer(k.Left)
     print(k.val)
     printer(k.Right)
+
+def size(p):
+    if p==None:
+        return 0
+    return 1+size(p.Left)+size(p.Right)
 
 
 a=Node(2,None,None)
@@ -28,4 +33,7 @@ b.Right=e
 c.Left=f
 c.Right=g
 printer(a)
+sized=size(a)
+print("Size of Binary Tree:",sized)
+
 
