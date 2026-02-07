@@ -20,6 +20,11 @@ def size(p):
         return 0
     return 1+size(p.Left)+size(p.Right)
 
+def sumotree(root):
+    if root == None:
+        return 0
+    return root.val+sumotree(root.Left)+sumotree(root.Right)
+
 
 a=Node(2,None,None)
 b=Node(5,None,None)
@@ -43,5 +48,7 @@ printer(a)
 sized=size(a)
 print("Size of Binary Tree:",sized)
 print("level of Binary tree:",level(a))
+print(sumotree(a))
+
 
 
